@@ -5,9 +5,6 @@ import Model.ChessPieces.Black.*;
 import Model.ChessPieces.White.*;
 import Model.StatusMessage;
 
-/**
- * Created by oleksiy on 4/8/17.
- */
 public class CommandNew extends Command {
     @Override
     public void execute(Board board, StatusMessage statusMessage) {

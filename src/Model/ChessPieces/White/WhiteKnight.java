@@ -1,10 +1,6 @@
 package Model.ChessPieces.White;
 
-import Model.ChessPieces.ChessPiece;
 import Model.ChessPieces.Knight;
 
-/**
- * Created by oleksiy on 4/10/17.
- */
 public class WhiteKnight extends Knight {
 }

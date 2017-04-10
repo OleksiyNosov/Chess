@@ -1,8 +1,5 @@
 package Model.Commands;
 
-/**
- * Created by oleksiy on 4/8/17.
- */
 public class CommandFactory {
     public static Command create(String rawCommand) {
         rawCommand = rawCommand.trim()

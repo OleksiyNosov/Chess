@@ -10,9 +10,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Hashtable;
 
-/**
- * Created by oleksiy on 4/9/17.
- */
 public class DataWorker {
 
     private static Hashtable<String, String> imageSources;

@@ -2,9 +2,6 @@ package Model;
 
 import java.awt.*;
 
-/**
- * Created by oleksiy on 4/10/17.
- */
 public class BoardPosition extends Point {
     public BoardPosition(int x, int y) {
         super(x, y);

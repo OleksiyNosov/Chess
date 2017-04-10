@@ -5,9 +5,6 @@ import Model.Cell;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 
-/**
- * Created by oleksiy on 4/8/17.
- */
 public class CellView extends JPanel {
 
     private Cell cell;

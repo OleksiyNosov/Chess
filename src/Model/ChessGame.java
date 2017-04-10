@@ -5,9 +5,6 @@ import Model.Commands.CommandFactory;
 
 import javax.swing.event.EventListenerList;
 
-/**
- * Created by oleksiy on 4/8/17.
- */
 public class ChessGame {
 
     private EventListenerList listenerList = new EventListenerList();

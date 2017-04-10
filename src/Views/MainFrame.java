@@ -5,14 +5,10 @@ import Model.ChessGame;
 import Model.ChessGameEvent;
 
 import javax.swing.*;
-import javax.xml.soap.Text;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
-/**
- * Created by oleksiy on 4/8/17.
- */
 public class MainFrame extends JFrame {
 
     private ChessGame chessGame;

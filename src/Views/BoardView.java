@@ -2,12 +2,8 @@ package Views;
 
 import Model.Board;
 
-import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by oleksiy on 4/8/17.
- */
 public class BoardView extends Container {
     private Board board;
 
