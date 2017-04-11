@@ -64,9 +64,6 @@ public class MainFrame extends JFrame {
 
         MessageView messageView = new MessageView(chessGame.getStatusMessage());
 
-        messageView.setSize(200,200);
-        messageView.setPreferredSize(new Dimension(200, 200));
-
         getContentPane().add(messageView, gbc);
     }
 

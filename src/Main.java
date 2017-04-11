@@ -1,7 +1,6 @@
 import Model.ChessGame;
 import Model.ChessGameEvent;
 import Model.ChessGameListener;
-import Model.ChessPieces.Black.BlackKnight;
 import Views.MainFrame;
 
 public class Main {
@@ -17,8 +16,6 @@ public class Main {
             }
         });
         mainFrame = new MainFrame(chessGame);
-
-        System.out.println(BlackKnight.class);
     }
 
 }
