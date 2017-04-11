@@ -1,8 +1,8 @@
 package model;
 
 public class Board {
-    private final int height = 8;
-    private final int width = 8;
+    private final int HEIGHT = 8;
+    private final int WIDTH = 8;
 
     private Cell[][] cells;
 
@@ -21,11 +21,11 @@ public class Board {
     }
 
     public int getHeight() {
-        return height;
+        return HEIGHT;
     }
 
     public int getWidth() {
-        return width;
+        return WIDTH;
     }
 
     public void clear() {
