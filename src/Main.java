@@ -1,7 +1,7 @@
-import Model.ChessGame;
-import Model.ChessGameEvent;
-import Model.ChessGameListener;
-import Views.MainFrame;
+import model.ChessGame;
+import model.ChessGameEvent;
+import model.ChessGameListener;
+import views.MainFrame;
 
 public class Main {
     private static ChessGame chessGame;
