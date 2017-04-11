@@ -1,8 +1,8 @@
 package views;
 
 import model.Board;
-import model.ChessGame;
-import model.ChessGameEvent;
+import controller.ChessGame;
+import controller.ChessGameEvent;
 
 import javax.swing.*;
 import java.awt.*;

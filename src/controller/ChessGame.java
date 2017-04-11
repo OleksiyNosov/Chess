@@ -1,5 +1,7 @@
-package model;
+package controller;
 
+import model.Board;
+import model.StatusMessage;
 import model.commands.Command;
 import model.commands.CommandFactory;
 

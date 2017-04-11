@@ -1,6 +1,6 @@
-import model.ChessGame;
-import model.ChessGameEvent;
-import model.ChessGameListener;
+import controller.ChessGame;
+import controller.ChessGameEvent;
+import controller.ChessGameListener;
 import views.MainFrame;
 
 public class Main {
