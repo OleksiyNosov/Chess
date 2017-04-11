@@ -41,6 +41,6 @@ public class Board {
     }
 
     public Cell getCellAt(BoardPosition place) {
-        return getCellAt(place.y, place.x);
+        return getCellAt(place.getY(), place.getX());
     }
 }

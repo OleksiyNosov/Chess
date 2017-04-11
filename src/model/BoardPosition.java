@@ -1,10 +1,13 @@
 package model;
 
-import java.awt.*;
+public class BoardPosition {
 
-public class BoardPosition extends Point {
+    private int x;
+    private int y;
+
     public BoardPosition(int x, int y) {
-        super(x, y);
+        this.x = x;
+        this.y = y;
     }
 
     public static BoardPosition parse(String position) {
@@ -15,5 +18,13 @@ public class BoardPosition extends Point {
 
     private static int getLetterEquivalent(String letter) {
         return letter.toCharArray()[0] - 'a';
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getX() {
+        return x;
     }
 }
