@@ -45,6 +45,7 @@ public class DataWorker {
     }
 
     private BufferedImage getImage(String path) {
+
         try {
             return ImageIO.read(new File(path));
         } catch (IOException e) {

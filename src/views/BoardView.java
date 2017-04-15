@@ -16,6 +16,7 @@ public class BoardView extends Container {
     public BoardView(Board board, DataWorker dataWorker) {
         this.board = board;
         this.dataWorker = dataWorker;
+      
         defaultCellSize = new Dimension(75,75);
         setPreferredSize(new Dimension(
                 defaultCellSize.width * board.getWidth(),

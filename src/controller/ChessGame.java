@@ -53,7 +53,6 @@ public class ChessGame {
 
     public void processCommand(String rawCommand) {
         command = CommandFactory.create(rawCommand);
-
         command.execute(this);
     }
 

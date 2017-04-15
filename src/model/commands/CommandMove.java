@@ -1,11 +1,13 @@
 package model.commands;
 
+
 import controller.ChessGame;
 import model.Board;
 import model.BoardPosition;
 import model.StatusMessage;
 
 public class CommandMove implements Command {
+
     private BoardPosition place;
     private BoardPosition destination;
 
@@ -17,9 +19,8 @@ public class CommandMove implements Command {
     @Override
     public void execute(ChessGame chessGame) {
         Board board = chessGame.getBoard();
-
+  
         board.getCellAt(destination).setChessPiece(board.getCellAt(place).getChessPiece());
         board.getCellAt(place).clear();
-
     }
 }
