@@ -1,6 +1,9 @@
 package model.chess_pieces;
 
-public abstract class Rook extends ChessPiece {
-    public Rook() {
+import model.Player;
+
+public class Rook extends ChessPiece {
+    public Rook(Player player, int color) {
+        super(player, color);
     }
 }

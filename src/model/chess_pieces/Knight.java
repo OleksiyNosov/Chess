@@ -1,4 +1,9 @@
 package model.chess_pieces;
 
-public abstract class Knight extends ChessPiece {
+import model.Player;
+
+public class Knight extends ChessPiece {
+    public Knight(Player player, int color) {
+        super(player, color);
+    }
 }

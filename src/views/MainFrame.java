@@ -12,12 +12,13 @@ import java.awt.event.KeyEvent;
 public class MainFrame extends JFrame {
 
     private ChessGame chessGame;
-
     private BoardView boardView;
+    private DataWorker dataWorker;
 
     public MainFrame(ChessGame chessGame) {
         super("ChessForLearning");
 
+        this.dataWorker = new DataWorker(chessGame);
         this.chessGame = chessGame;
 
         setPreferredSize(new Dimension(900, 600));
@@ -49,7 +50,7 @@ public class MainFrame extends JFrame {
         gbc.gridx = 0;
         gbc.gridy = 0;
 
-        boardView = new BoardView(chessGame.getBoard());
+        boardView = new BoardView(chessGame.getBoard(), dataWorker);
 
         getContentPane().add(boardView, gbc);
     }

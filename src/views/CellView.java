@@ -9,14 +9,17 @@ public class CellView extends JPanel {
 
     private Cell cell;
 
-    public CellView(Cell cell) {
+    private DataWorker dataWorker;
+
+    public CellView(Cell cell, DataWorker dataWorker) {
         this.cell = cell;
+        this.dataWorker = dataWorker;
     }
 
     public void update() {
         //repaint();
 
-        BufferedImage image = DataWorker.getImage(cell.getChessPiece());
+        BufferedImage image = dataWorker.getImage(cell.getChessPiece());
 
         if (image == null)
             repaint();

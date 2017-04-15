@@ -1,12 +1,13 @@
 package model.commands;
 
+import controller.ChessGame;
 import model.Board;
 import model.StatusMessage;
 
-public class CommandClear extends Command {
+public class CommandClear implements Command {
 
     @Override
-    public void execute(Board board, StatusMessage statusMessage) {
-        board.clear();
+    public void execute(ChessGame chessGame) {
+        chessGame.getBoard().clear();
     }
 }

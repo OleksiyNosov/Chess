@@ -11,8 +11,12 @@ public class BoardView extends Container {
 
     private CellView[][] cellViews;
 
-    public BoardView(Board board) {
+    private DataWorker dataWorker;
+
+    public BoardView(Board board, DataWorker dataWorker) {
         this.board = board;
+        this.dataWorker = dataWorker;
+      
         defaultCellSize = new Dimension(75,75);
         setPreferredSize(new Dimension(
                 defaultCellSize.width * board.getWidth(),
@@ -28,7 +32,7 @@ public class BoardView extends Container {
 
         for (int i = 0; i < board.getHeight(); i++) {
             for (int j = 0; j < board.getWidth(); j++) {
-                cellViews[i][j] = new CellView(board.getCellAt(i, j));
+                cellViews[i][j] = new CellView(board.getCellAt(i, j), dataWorker);
 
                 cellViews[i][j].setPreferredSize(defaultCellSize);
                 cellViews[i][j].setBackground(((j + (i % 2)) % 2 == 0) ? Color.white: Color.lightGray);

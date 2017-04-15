@@ -1,6 +1,7 @@
 package controller;
 
 import model.Board;
+import model.Player;
 import model.StatusMessage;
 import model.commands.Command;
 import model.commands.CommandFactory;
@@ -15,9 +16,13 @@ public class ChessGame {
     private Command command;
     private StatusMessage statusMessage;
 
+    private Player players[];
+
     public ChessGame() {
         board = new Board();
         statusMessage = new StatusMessage();
+
+        players = new Player[]{ new Player(), new Player()};
     }
 
     public Board getBoard() {
@@ -48,7 +53,10 @@ public class ChessGame {
 
     public void processCommand(String rawCommand) {
         command = CommandFactory.create(rawCommand);
+        command.execute(this);
+    }
 
-        command.execute(board, statusMessage);
+    public Player getPlayer(int index) {
+        return players[index];
     }
 }
