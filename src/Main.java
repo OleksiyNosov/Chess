@@ -1,8 +1,7 @@
-import Model.ChessGame;
-import Model.ChessGameEvent;
-import Model.ChessGameListener;
-import Model.ChessPieces.Black.BlackKnight;
-import Views.MainFrame;
+import controller.ChessGame;
+import controller.ChessGameEvent;
+import controller.ChessGameListener;
+import views.MainFrame;
 
 public class Main {
     private static ChessGame chessGame;
@@ -17,8 +16,6 @@ public class Main {
             }
         });
         mainFrame = new MainFrame(chessGame);
-
-        System.out.println(BlackKnight.class);
     }
 
 }
