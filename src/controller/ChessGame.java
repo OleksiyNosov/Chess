@@ -3,6 +3,7 @@ package controller;
 import model.Board;
 import model.Player;
 import model.StatusMessage;
+import model.chess_pieces.ChessPieceColor;
 import model.commands.Command;
 import model.commands.CommandFactory;
 
@@ -22,7 +23,7 @@ public class ChessGame {
         board = new Board();
         statusMessage = new StatusMessage();
 
-        players = new Player[]{ new Player(), new Player()};
+        players = new Player[]{ new Player(ChessPieceColor.WHITE), new Player(ChessPieceColor.BLACK)};
     }
 
     public Board getBoard() {
