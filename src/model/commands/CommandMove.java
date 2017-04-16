@@ -4,7 +4,7 @@ package model.commands;
 import controller.ChessGame;
 import model.Board;
 import model.BoardPosition;
-import model.StatusMessage;
+import model.Cell;
 
 public class CommandMove implements Command {
 
@@ -19,8 +19,13 @@ public class CommandMove implements Command {
     @Override
     public void execute(ChessGame chessGame) {
         Board board = chessGame.getBoard();
-  
-        board.getCellAt(destination).setChessPiece(board.getCellAt(place).getChessPiece());
-        board.getCellAt(place).clear();
+
+        Cell placeCell = board.getCellAt(place);
+        Cell destinationCell = board.getCellAt(destination);
+
+        if (placeCell.getChessPiece().checkIfPossible(board, place, destination)) {
+            destinationCell.setChessPiece(placeCell.getChessPiece());
+            placeCell.clear();
+        }
     }
 }
