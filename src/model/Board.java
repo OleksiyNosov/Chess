@@ -43,4 +43,10 @@ public class Board {
     public Cell getCellAt(BoardPosition place) {
         return getCellAt(place.getY(), place.getX());
     }
+
+    public boolean isOnBoard(BoardPosition pos) {
+        return  (pos.getY() >= 0 && pos.getY() < getHeight()) &&
+                (pos.getX() >= 0 && pos.getX() < getWidth());
+
+    }
 }
