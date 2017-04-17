@@ -1,16 +1,17 @@
-package model;
+package model.chess_pieces;
 
-import model.chess_pieces.ChessPiece;
+import model.Board;
+import model.BoardPosition;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class MovementManager {
+public class ChessPieceMovements {
     private static Board board;
     private static ChessPiece chessPiece;
     private static BoardPosition place;
 
-    private MovementManager() {}
+    private ChessPieceMovements() {}
 
     public static List<BoardPosition> getAllForSides(Board board, BoardPosition place, int max) {
         setFields(board, place);
@@ -112,8 +113,8 @@ public class MovementManager {
     }
 
     private static void setFields(Board board, BoardPosition place) {
-        MovementManager.board = board;
-        MovementManager.chessPiece = board.getCellAt(place).getChessPiece();
-        MovementManager.place = place;
+        ChessPieceMovements.board = board;
+        ChessPieceMovements.chessPiece = board.getCellAt(place).getChessPiece();
+        ChessPieceMovements.place = place;
     }
 }

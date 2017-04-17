@@ -2,7 +2,6 @@ package model.chess_pieces;
 
 import model.Board;
 import model.BoardPosition;
-import model.MovementManager;
 import model.Player;
 
 import java.util.List;
@@ -14,6 +13,6 @@ public class Knight extends ChessPiece {
 
     @Override
     public List<BoardPosition> getAllPossibleMovements(Board board, BoardPosition place) {
-        return MovementManager.getAllForKnight(board, place);
+        return ChessPieceMovements.getAllForKnight(board, place);
     }
 }
