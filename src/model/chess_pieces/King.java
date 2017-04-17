@@ -16,8 +16,8 @@ public class King extends ChessPiece {
     public List<BoardPosition> getAllPossibleMovements(Board board, BoardPosition place) {
         List<BoardPosition> moves = new LinkedList<>();
 
-        moves.addAll(ChessPieceMovements.getAllForSides(    board, place, 1));
-        moves.addAll(ChessPieceMovements.getAllForDiagonals(board, place, 1));
+        moves.addAll(ChessPieceMovements.getAllMovesForSides(    board, place, 1));
+        moves.addAll(ChessPieceMovements.getAllMovesForDiagonals(board, place, 1));
 
         return moves;
     }

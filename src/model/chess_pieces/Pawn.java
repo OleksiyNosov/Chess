@@ -17,6 +17,6 @@ public class Pawn extends ChessPiece {
         int direction = (getColor() == ChessPieceColor.BLACK) ? 1 : -1;
         int max = (place.getY() == 1 || place.getY() == 6) ? 2 : 1;
 
-        return ChessPieceMovements.getAllForPawn(board, place, max, direction);
+        return ChessPieceMovements.getAllMovesForPawn(board, place, max, direction);
     }
 }
