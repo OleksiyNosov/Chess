@@ -33,8 +33,8 @@ public class BoardPosition {
         if (obj == null)
             return false;
 
-        BoardPosition pos = (BoardPosition) obj;
-        if (pos.getX() == getX() && pos.getY() == getY())
+        BoardPosition boardPosition = (BoardPosition) obj;
+        if (boardPosition.getX() == getX() && boardPosition.getY() == getY())
             return true;
 
         return false;
