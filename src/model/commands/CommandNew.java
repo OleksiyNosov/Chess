@@ -14,29 +14,26 @@ public class CommandNew implements Command {
 
     private void setChessPiecesForNewGame(Board board, Player player1, Player player2) {
 
-        board.getCellAt(0, 0).setChessPiece(new Rook   (player2, ChessPieceColor.BLACK));
-        board.getCellAt(0, 1).setChessPiece(new Knight (player2, ChessPieceColor.BLACK));
-        board.getCellAt(0, 2).setChessPiece(new Bishop (player2, ChessPieceColor.BLACK));
-        board.getCellAt(0, 3).setChessPiece(new Queen  (player2, ChessPieceColor.BLACK));
-        board.getCellAt(0, 4).setChessPiece(new King   (player2, ChessPieceColor.BLACK));
-        board.getCellAt(0, 5).setChessPiece(new Bishop (player2, ChessPieceColor.BLACK));
-        board.getCellAt(0, 6).setChessPiece(new Knight (player2, ChessPieceColor.BLACK));
-        board.getCellAt(0, 7).setChessPiece(new Rook   (player2, ChessPieceColor.BLACK));
+        setLineOfMainChessPieces(board,0, player2);
+        setLineOfPawns(board, 1, player2);
 
+        setLineOfPawns(board, 6, player1);
+        setLineOfMainChessPieces(board, 7, player1);
+    }
+
+    private void setLineOfMainChessPieces(Board board, int row, Player player) {
+        board.getCellAt(row, 0).setChessPiece(new Rook   (player));
+        board.getCellAt(row, 1).setChessPiece(new Knight (player));
+        board.getCellAt(row, 2).setChessPiece(new Bishop (player));
+        board.getCellAt(row, 3).setChessPiece(new Queen  (player));
+        board.getCellAt(row, 4).setChessPiece(new King   (player));
+        board.getCellAt(row, 5).setChessPiece(new Bishop (player));
+        board.getCellAt(row, 6).setChessPiece(new Knight (player));
+        board.getCellAt(row, 7).setChessPiece(new Rook   (player));
+    }
+
+    private void setLineOfPawns(Board board, int row, Player player) {
         for (int j = 0; j < board.getWidth(); j++)
-            board.getCellAt(1, j).setChessPiece(new Pawn(player2, ChessPieceColor.BLACK));
-
-
-        board.getCellAt(7, 0).setChessPiece(new Rook   (player1, ChessPieceColor.WHITE));
-        board.getCellAt(7, 1).setChessPiece(new Knight (player1, ChessPieceColor.WHITE));
-        board.getCellAt(7, 2).setChessPiece(new Bishop (player1, ChessPieceColor.WHITE));
-        board.getCellAt(7, 3).setChessPiece(new Queen  (player1, ChessPieceColor.WHITE));
-        board.getCellAt(7, 4).setChessPiece(new King   (player1, ChessPieceColor.WHITE));
-        board.getCellAt(7, 5).setChessPiece(new Bishop (player1, ChessPieceColor.WHITE));
-        board.getCellAt(7, 6).setChessPiece(new Knight (player1, ChessPieceColor.WHITE));
-        board.getCellAt(7, 7).setChessPiece(new Rook   (player1, ChessPieceColor.WHITE));
-
-        for (int j = 0; j < board.getWidth(); j++)
-            board.getCellAt(6, j).setChessPiece(new Pawn(player1, ChessPieceColor.WHITE));
+            board.getCellAt(row, j).setChessPiece(new Pawn(player));
     }
 }

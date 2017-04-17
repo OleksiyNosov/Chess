@@ -21,4 +21,8 @@ public class Cell {
     public void setChessPiece(ChessPiece chessPiece) {
         this.chessPiece = chessPiece;
     }
+
+    public boolean isEmpty() {
+        return chessPiece == null;
+    }
 }

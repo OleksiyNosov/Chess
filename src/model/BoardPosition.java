@@ -27,4 +27,24 @@ public class BoardPosition {
     public int getX() {
         return x;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+
+        BoardPosition boardPosition = (BoardPosition) obj;
+        if (boardPosition.getX() == getX() && boardPosition.getY() == getY())
+            return true;
+
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 15;
+        result = 31 * result + getX();
+        result = 31 * result + getY();
+        return result;
+    }
 }

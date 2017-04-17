@@ -1,6 +1,7 @@
 package views;
 
 import controller.ChessGame;
+import model.Player;
 import model.chess_pieces.*;
 
 import javax.imageio.ImageIO;
@@ -11,37 +12,39 @@ import java.util.Hashtable;
 
 public class DataWorker {
 
-    private Hashtable<Integer, BufferedImage> imageSources;
+    private Hashtable<Integer, BufferedImage> images;
 
     public DataWorker(ChessGame chessGame) {
         initHashWithImages(chessGame);
     }
 
     private void initHashWithImages(ChessGame chessGame) {
-        String pathToImages = "src/views/images/";
+        String pathToImages = "src/views/images/chess_piece_2_";
 
-        imageSources = new Hashtable<>();
+        images = new Hashtable<>();
+        Player player1 = chessGame.getPlayer(0);
+        Player player2 = chessGame.getPlayer(1);
 
-        imageSources.put(new Rook   (chessGame.getPlayer(0), ChessPieceColor.WHITE).hashCode(), getImage(pathToImages + "chess_piece_2_white_rook.png"));
-        imageSources.put(new Knight (chessGame.getPlayer(0), ChessPieceColor.WHITE).hashCode(), getImage(pathToImages + "chess_piece_2_white_knight.png"));
-        imageSources.put(new Bishop (chessGame.getPlayer(0), ChessPieceColor.WHITE).hashCode(), getImage(pathToImages + "chess_piece_2_white_bishop.png"));
-        imageSources.put(new Queen  (chessGame.getPlayer(0), ChessPieceColor.WHITE).hashCode(), getImage(pathToImages + "chess_piece_2_white_queen.png"));
-        imageSources.put(new King   (chessGame.getPlayer(0), ChessPieceColor.WHITE).hashCode(), getImage(pathToImages + "chess_piece_2_white_king.png"));
-        imageSources.put(new Pawn   (chessGame.getPlayer(0), ChessPieceColor.WHITE).hashCode(), getImage(pathToImages + "chess_piece_2_white_pawn.png"));
+        images.put(new Rook   (player1).hashCode(), getImage(pathToImages + "white_rook.png"));
+        images.put(new Knight (player1).hashCode(), getImage(pathToImages + "white_knight.png"));
+        images.put(new Bishop (player1).hashCode(), getImage(pathToImages + "white_bishop.png"));
+        images.put(new Queen  (player1).hashCode(), getImage(pathToImages + "white_queen.png"));
+        images.put(new King   (player1).hashCode(), getImage(pathToImages + "white_king.png"));
+        images.put(new Pawn   (player1).hashCode(), getImage(pathToImages + "white_pawn.png"));
 
-        imageSources.put(new Rook   (chessGame.getPlayer(1), ChessPieceColor.BLACK).hashCode(), getImage(pathToImages + "chess_piece_2_black_rook.png"));
-        imageSources.put(new Knight (chessGame.getPlayer(1), ChessPieceColor.BLACK).hashCode(), getImage(pathToImages + "chess_piece_2_black_knight.png"));
-        imageSources.put(new Bishop (chessGame.getPlayer(1), ChessPieceColor.BLACK).hashCode(), getImage(pathToImages + "chess_piece_2_black_bishop.png"));
-        imageSources.put(new Queen  (chessGame.getPlayer(1), ChessPieceColor.BLACK).hashCode(), getImage(pathToImages + "chess_piece_2_black_queen.png"));
-        imageSources.put(new King   (chessGame.getPlayer(1), ChessPieceColor.BLACK).hashCode(), getImage(pathToImages + "chess_piece_2_black_king.png"));
-        imageSources.put(new Pawn   (chessGame.getPlayer(1), ChessPieceColor.BLACK).hashCode(), getImage(pathToImages + "chess_piece_2_black_pawn.png"));
+        images.put(new Rook   (player2).hashCode(), getImage(pathToImages + "black_rook.png"));
+        images.put(new Knight (player2).hashCode(), getImage(pathToImages + "black_knight.png"));
+        images.put(new Bishop (player2).hashCode(), getImage(pathToImages + "black_bishop.png"));
+        images.put(new Queen  (player2).hashCode(), getImage(pathToImages + "black_queen.png"));
+        images.put(new King   (player2).hashCode(), getImage(pathToImages + "black_king.png"));
+        images.put(new Pawn   (player2).hashCode(), getImage(pathToImages + "black_pawn.png"));
     }
 
     public BufferedImage getImage(ChessPiece chessPiece) {
         if (chessPiece == null)
             return null;
 
-        return imageSources.get(chessPiece.hashCode());
+        return images.get(chessPiece.hashCode());
     }
 
     private BufferedImage getImage(String path) {

@@ -40,7 +40,13 @@ public class Board {
         return cells[i % getHeight()][j % getWidth()];
     }
 
-    public Cell getCellAt(BoardPosition place) {
-        return getCellAt(place.getY(), place.getX());
+    public Cell getCellAt(BoardPosition boardPosition) {
+        return getCellAt(boardPosition.getY(), boardPosition.getX());
+    }
+
+    public boolean isOnBoard(BoardPosition boardPosition) {
+        return  (boardPosition.getY() >= 0 && boardPosition.getY() < getHeight()) &&
+                (boardPosition.getX() >= 0 && boardPosition.getX() < getWidth());
+
     }
 }
