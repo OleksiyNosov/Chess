@@ -13,6 +13,10 @@ public class Bishop extends ChessPiece {
 
     @Override
     public List<BoardPosition> getAllPossibleMovements(Board board, BoardPosition place) {
-        return ChessPieceMovements.getAllMovesForDiagonals(board, place, Integer.MAX_VALUE);
+        ChessPieceMovements movements = new ChessPieceMovements(board, place, Integer.MAX_VALUE);
+
+        movements.calcMovesForDiagonals();
+
+        return movements.getMoves();
     }
 }

@@ -13,6 +13,10 @@ public class Rook extends ChessPiece {
 
     @Override
     public List<BoardPosition> getAllPossibleMovements(Board board, BoardPosition place) {
-        return ChessPieceMovements.getAllMovesForSides(board, place, Integer.MAX_VALUE);
+        ChessPieceMovements movements = new ChessPieceMovements(board, place, Integer.MAX_VALUE);
+
+        movements.calcMovesForSides();
+
+        return movements.getMoves();
     }
 }

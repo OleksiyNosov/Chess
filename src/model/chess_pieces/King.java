@@ -14,11 +14,11 @@ public class King extends ChessPiece {
 
     @Override
     public List<BoardPosition> getAllPossibleMovements(Board board, BoardPosition place) {
-        List<BoardPosition> moves = new LinkedList<>();
+        ChessPieceMovements movements = new ChessPieceMovements(board, place, 1);
 
-        moves.addAll(ChessPieceMovements.getAllMovesForSides(    board, place, 1));
-        moves.addAll(ChessPieceMovements.getAllMovesForDiagonals(board, place, 1));
+        movements.calcMovesForSides();
+        movements.calcMovesForDiagonals();
 
-        return moves;
+        return movements.getMoves();
     }
 }

@@ -13,6 +13,10 @@ public class Knight extends ChessPiece {
 
     @Override
     public List<BoardPosition> getAllPossibleMovements(Board board, BoardPosition place) {
-        return ChessPieceMovements.getAllMovesForKnight(board, place);
+        ChessPieceMovements movements = new ChessPieceMovements(board, place, 1);
+
+        movements.calcMovesForKnight();
+
+        return movements.getMoves();
     }
 }
