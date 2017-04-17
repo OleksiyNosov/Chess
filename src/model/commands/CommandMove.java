@@ -23,7 +23,7 @@ public class CommandMove implements Command {
         Cell placeCell = board.getCellAt(place);
         Cell destinationCell = board.getCellAt(destination);
 
-        if (placeCell.getChessPiece().checkIfPossible(board, place, destination)) {
+        if (placeCell.getChessPiece().checkIfPossibleForMove(board, place, destination)) {
             destinationCell.setChessPiece(placeCell.getChessPiece());
             placeCell.clear();
         }

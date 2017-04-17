@@ -31,7 +31,7 @@ public abstract class ChessPiece{
         return player.getColor();
     }
 
-    public boolean checkIfPossible(Board board, BoardPosition place, BoardPosition destination) {
+    public boolean checkIfPossibleForMove(Board board, BoardPosition place, BoardPosition destination) {
         return getAllPossibleMovements(board, place).contains(destination);
     }
 
