@@ -4,7 +4,9 @@ import model.Board;
 import model.BoardPosition;
 import model.Player;
 
-public abstract class ChessPiece implements ChessPieceMovementLogic {
+import java.util.List;
+
+public abstract class ChessPiece{
 
     private Player player;
 
@@ -29,8 +31,9 @@ public abstract class ChessPiece implements ChessPieceMovementLogic {
         return player.getColor();
     }
 
-    @Override
     public boolean checkIfPossible(Board board, BoardPosition place, BoardPosition destination) {
         return getAllPossibleMovements(board, place).contains(destination);
     }
+
+    public abstract List<BoardPosition> getAllPossibleMovements(Board board, BoardPosition place);
 }
